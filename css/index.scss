@@ -1,0 +1,302 @@
+$tablet-break: 680px;
+$desktop-break: 1240px;
+$primary-color: #D04F4F;
+$ingredients: #3282F7;
+$appareil: #68D9A4;
+$ustensiles: #ED6454;
+$light-gray: #E7E7E7;
+$logo-font: 'DM Sans', sans-serif;
+$primary-font: 'Lato', sans-serif;
+$secondary-font: 'Roboto', sans-serif;
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    max-width: 1240px;
+    margin: 0 auto;
+}
+
+header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 0 20px 0;
+    .logo__text {
+        color:$primary-color;
+        font-family: $logo-font;
+        font-weight: 700;
+        font-size: 36px;
+        line-height: 47px;
+    }
+}
+
+main {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.search-bar {
+    width: 100%;
+    height: 70px;
+    background-color: $light-gray;
+    border-radius: 5px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    input {
+        background-color: transparent;
+        border: 0;
+        width: 100%;
+        height: 100%;
+        margin-right: 20px;
+        font-family: $primary-font;
+        font-size: 18px;
+        font-weight: 400;
+        color: black;
+        &::placeholder {
+            color: black;
+            opacity: 0.25;
+        }
+        &:focus {
+            outline: none;
+        }
+    }
+}
+
+.tags {
+    width: 100%;
+    padding-top: 15px;
+    ul {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        li {
+            padding: 10px 20px;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-right: 20px;
+            margin-top: 10px;
+            p {
+                color: white;
+                font-family: $primary-font;
+                font-weight: 700;
+                font-size: 14px;
+                line-height: 17px;
+                margin-right: 20px;
+            }
+        }
+    }
+    &--ingredients {
+        background-color: $ingredients;
+    }
+    &--appareil {
+        background-color: $appareil;
+    }
+    &--ustensiles {
+        background-color: $ustensiles;
+    }
+}
+
+.tags-dropdown {
+    width: 100%;
+    display: flex;
+    margin-top: 25px;
+    cursor: pointer;
+    &--ingredients, &--appareil, &--ustensiles {
+        display: flex;
+        padding: 0 20px;
+        border-radius: 5px;
+        align-items: flex-start;
+        margin-right: 20px;
+        flex-wrap: wrap;
+        position: relative;
+        width: 200px;
+        height: 70px;
+        overflow: hidden;
+        .tags__list {
+            width: 100%;
+            // position: absolute;
+            // top: 70px;
+        }
+    }
+    &--ingredients {
+        background-color: $ingredients;
+        transition: width 100ms ease-in-out, height 100ms ease-in-out 100ms;
+    }
+    &--appareil {
+        background-color: $appareil;
+        transition: width 100ms ease-in-out, height 100ms ease-in-out 100ms;
+    }
+    &--ustensiles {
+        background-color: $ustensiles;
+        transition: width 100ms ease-in-out, height 100ms ease-in-out 100ms;
+    }
+
+    .opened {
+        width: 670px;
+        height: 400px;
+    }
+
+    .tags-input {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        .input {
+            width: 100%;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            input {
+                width: 100%;
+                background-color: transparent;
+                border: none;
+                color: white;
+                font-family: $primary-font;
+                font-weight: 700;
+                font-size: 18px;
+                margin-right: 20px;
+                &::placeholder{
+                    color: white;
+                }
+                &:focus {
+                    outline: none;
+                }
+            }
+        }
+        .tags__list {
+            list-style: none;
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding-bottom: 10px;
+            li {
+                font-family: $primary-font;
+                color: white;
+                font-weight: 400;
+                font-size: 18px;
+                line-height: 22px;
+                margin-bottom: 10px;
+                width: 30%;
+            }
+        }
+    }
+}
+
+
+.recipes-cards {
+    width: 100%;
+    display: flex;
+    &__list {
+        width: 100%;
+        display: flex;
+        list-style: none;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        &-item {
+            width: 100%;
+            background-color: $light-gray;
+            border-radius: 5px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            margin-top: 50px;
+            .image-placeholder {
+                width: 100%;
+                height: 178px;
+                background-color: #C7BEBE;
+            }
+            .recipe__info {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                padding: 20px;
+                .recipe__header {
+                    display: flex;
+                    justify-content: space-between;
+                    padding: 0 0 20px 0;
+                    .title-text, .time p {
+                        font-family: $primary-font;
+                        font-weight: 400;
+                        font-size: 18px;
+                        line-height: 22px;
+                        color: black;
+                    }
+                    .time {
+                        display: flex;
+                        img {
+                            margin-right: 7px;
+                        }
+                        p {
+                            font-weight: 700;
+                        }
+                    }
+                }
+                .recipe__body {
+                    display: flex;
+                    &-ingredients {
+                        list-style: none;
+                        width: 50%;
+                        padding-right: 10px;
+                        li {
+                            width: 100%;
+                            p {
+                                font-family: $primary-font;
+                                color: black;
+                                font-size: 12px;
+                                line-height: 15px;
+                                font-weight: 700;
+                                span {
+                                    font-weight: 400;
+                                }
+                            }
+                        }
+                    }
+                    &-description {
+                        width: 50%;
+                        font-family: $secondary-font;
+                        font-weight: 400;
+                        font-size: 12px;
+                        line-height: 15px;
+                        color: black;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: $tablet-break) {
+
+    .recipes-cards {
+        &__list {
+            &-item {
+                width: 48%;
+            }
+        }
+    }
+
+}
+
+@media screen and (min-width: $desktop-break) {
+
+    .recipes-cards {
+        &__list {
+            &-item {
+                width: 30%;
+            }
+        }
+    }
+
+}
