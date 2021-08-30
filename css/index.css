@@ -1,8 +1,7 @@
 * {
   padding: 0;
   margin: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
@@ -12,16 +11,9 @@ body {
 
 header {
   width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  align-items: center;
   padding: 40px 0 20px 0;
 }
 
@@ -35,14 +27,9 @@ header .logo__text {
 
 main {
   width: 100%;
-  padding: 20px;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  padding: 20px 0 100px 0;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
 }
 
 .search-bar {
@@ -51,15 +38,9 @@ main {
   background-color: #E7E7E7;
   border-radius: 5px;
   padding: 20px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .search-bar input {
@@ -72,21 +53,6 @@ main {
   font-size: 18px;
   font-weight: 400;
   color: black;
-}
-
-.search-bar input::-webkit-input-placeholder {
-  color: black;
-  opacity: 0.25;
-}
-
-.search-bar input:-ms-input-placeholder {
-  color: black;
-  opacity: 0.25;
-}
-
-.search-bar input::-ms-input-placeholder {
-  color: black;
-  opacity: 0.25;
 }
 
 .search-bar input::placeholder {
@@ -105,25 +71,16 @@ main {
 
 .tags ul {
   width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 
 .tags ul li {
   padding: 10px 20px;
   border-radius: 5px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: space-between;
+  align-items: center;
   margin-right: 20px;
   margin-top: 10px;
 }
@@ -151,25 +108,20 @@ main {
 
 .tags-dropdown {
   width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  height: 70px;
   display: flex;
   margin-top: 25px;
   cursor: pointer;
+  z-index: 50;
 }
 
 .tags-dropdown--ingredients, .tags-dropdown--appareil, .tags-dropdown--ustensiles {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   padding: 0 20px;
   border-radius: 5px;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  align-items: flex-start;
   margin-right: 20px;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
   position: relative;
   width: 200px;
   height: 70px;
@@ -182,19 +134,16 @@ main {
 
 .tags-dropdown--ingredients {
   background-color: #3282F7;
-  -webkit-transition: width 100ms ease-in-out, height 100ms ease-in-out 100ms;
   transition: width 100ms ease-in-out, height 100ms ease-in-out 100ms;
 }
 
 .tags-dropdown--appareil {
   background-color: #68D9A4;
-  -webkit-transition: width 100ms ease-in-out, height 100ms ease-in-out 100ms;
   transition: width 100ms ease-in-out, height 100ms ease-in-out 100ms;
 }
 
 .tags-dropdown--ustensiles {
   background-color: #ED6454;
-  -webkit-transition: width 100ms ease-in-out, height 100ms ease-in-out 100ms;
   transition: width 100ms ease-in-out, height 100ms ease-in-out 100ms;
 }
 
@@ -205,24 +154,15 @@ main {
 
 .tags-dropdown .tags-input {
   width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
 }
 
 .tags-dropdown .tags-input .input {
   width: 100%;
   height: 70px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
 }
 
 .tags-dropdown .tags-input .input input {
@@ -236,18 +176,6 @@ main {
   margin-right: 20px;
 }
 
-.tags-dropdown .tags-input .input input::-webkit-input-placeholder {
-  color: white;
-}
-
-.tags-dropdown .tags-input .input input:-ms-input-placeholder {
-  color: white;
-}
-
-.tags-dropdown .tags-input .input input::-ms-input-placeholder {
-  color: white;
-}
-
 .tags-dropdown .tags-input .input input::placeholder {
   color: white;
 }
@@ -259,14 +187,9 @@ main {
 .tags-dropdown .tags-input .tags__list {
   list-style: none;
   width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  flex-wrap: wrap;
+  justify-content: space-between;
   padding-bottom: 10px;
 }
 
@@ -282,22 +205,15 @@ main {
 
 .recipes-cards {
   width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 }
 
 .recipes-cards__list {
   width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   list-style: none;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .recipes-cards__list-item {
@@ -305,13 +221,8 @@ main {
   background-color: #E7E7E7;
   border-radius: 5px;
   overflow: hidden;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   margin-top: 50px;
 }
 
@@ -323,23 +234,14 @@ main {
 
 .recipes-cards__list-item .recipe__info {
   width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   padding: 20px;
 }
 
 .recipes-cards__list-item .recipe__info .recipe__header {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
   padding: 0 0 20px 0;
 }
 
@@ -352,8 +254,6 @@ main {
 }
 
 .recipes-cards__list-item .recipe__info .recipe__header .time {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 }
 
@@ -366,8 +266,6 @@ main {
 }
 
 .recipes-cards__list-item .recipe__info .recipe__body {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 }
 
