@@ -1,11 +1,9 @@
 import RecipeCard from "./RecipeCard.js";
 
 const RecipeList = (data) => {
-    console.log(data)
 
     const recipesSection = document.querySelector('.recipes-cards');
 
-    console.log(recipesSection)
 
     const createRecipeList = () => {
         data.map(recipe => {
