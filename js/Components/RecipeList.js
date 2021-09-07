@@ -6,6 +6,7 @@ const RecipeList = (data) => {
 
 
     const createRecipeList = () => {
+        recipesSection.innerHTML = "";
         data.map(recipe => {
             recipesSection.innerHTML += RecipeCard(recipe.name, recipe.description, recipe.ingredients, recipe.time);
         })
