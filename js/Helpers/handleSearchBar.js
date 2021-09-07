@@ -1,20 +1,37 @@
+import RecipeList from "../Components/RecipeList.js";
 
+const handleSearchBar = (recipeData) => {
 
-const handleSearchBar = (data) => {
     const searchBar = document.querySelector('.search-bar input');
-    const recipeTitleElement = [...document.querySelectorAll('.title-text')];
-
-    let newData = []
 
     searchBar.addEventListener('keyup', (e) => {
+        const searchString = e.target.value.toLowerCase();
 
-        if(e.target.value.split('').length >= 3) {
-            newData = data.filter(d => d.name.toLowerCase().includes(e.target.value));
-            console.log(newData);
+        let filteredRecipes = [];
+
+        if (searchString.length >= 3){
+            filteredRecipes = recipeData.filter( (recipe) => {
+
+                const ingredients = () => {
+                    let ingredientArray = [];
+                    recipe.ingredients.map( ing => {
+                        ingredientArray.push(ing.ingredient);
+                    })
+                    return ingredientArray.join(' ').toLowerCase().includes(searchString);
+                }
+                
+                return (
+                    recipe.name.toLowerCase().includes(searchString)
+                    || recipe.description.toLowerCase().includes(searchString)
+                    || ingredients()
+                );
+            });
+            RecipeList(filteredRecipes);
+        } else {
+            RecipeList(recipeData);
         }
         
-
-    })
+    });
 
 }
 
