@@ -1,8 +1,11 @@
+import handleTagsSearch from "../Helpers/handleTagsSearch.js";
+
 const IngredientsTags = (data) => {
 
     const ingredientsTagList = document.querySelector('.dropdown__ingredients .tags__list');
 
     let allIngredients = [];
+
     ingredientsTagList.innerHTML = "";
 
     data.map(recipe => {
@@ -13,15 +16,11 @@ const IngredientsTags = (data) => {
 
     let uniqueIngredients = [...new Set(allIngredients)]
 
-    console.log(ingredientsTagList)
-
     uniqueIngredients.map( unique => {
         ingredientsTagList.innerHTML += `<li>${unique}</li>`
     })
 
-    
-
-    
+    handleTagsSearch(data, ingredientsTagList)
 
 }
 

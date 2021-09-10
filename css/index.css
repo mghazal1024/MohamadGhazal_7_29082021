@@ -162,6 +162,11 @@ main {
   justify-content: flex-end;
   align-items: center;
   cursor: pointer;
+  transform: rotate(0);
+}
+
+.dropdown__ingredients .tags-chevron.opened, .dropdown__appareil .tags-chevron.opened, .dropdown__ustensiles .tags-chevron.opened {
+  transform: rotate(180deg);
 }
 
 .dropdown__ingredients .tags__list, .dropdown__appareil .tags__list, .dropdown__ustensiles .tags__list {

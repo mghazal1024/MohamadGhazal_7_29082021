@@ -159,6 +159,10 @@ main {
             justify-content: flex-end;
             align-items: center;
             cursor: pointer;
+            transform: rotate(0);
+        }
+        .tags-chevron.opened {
+            transform: rotate(180deg);
         }
         .tags__list {
             width: 100%;
