@@ -106,94 +106,74 @@ main {
   background-color: #ED6454;
 }
 
-.tags-dropdown {
+.dropdown {
   width: 100%;
   height: 70px;
   display: flex;
-  margin-top: 25px;
-  cursor: pointer;
-  z-index: 50;
+  position: relative;
+  margin-top: 20px;
 }
 
-.tags-dropdown--ingredients, .tags-dropdown--appareil, .tags-dropdown--ustensiles {
+.dropdown__wrapper {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
   display: flex;
-  padding: 0 20px;
-  border-radius: 5px;
   align-items: flex-start;
-  margin-right: 20px;
-  flex-wrap: wrap;
-  position: relative;
+}
+
+.dropdown__ingredients, .dropdown__appareil, .dropdown__ustensiles {
   width: 200px;
   height: 70px;
-  overflow: hidden;
-}
-
-.tags-dropdown--ingredients .tags__list, .tags-dropdown--appareil .tags__list, .tags-dropdown--ustensiles .tags__list {
-  width: 100%;
-}
-
-.tags-dropdown--ingredients {
-  background-color: #3282F7;
-  transition: width 100ms ease-in-out, height 100ms ease-in-out 100ms;
-}
-
-.tags-dropdown--appareil {
-  background-color: #68D9A4;
-  transition: width 100ms ease-in-out, height 100ms ease-in-out 100ms;
-}
-
-.tags-dropdown--ustensiles {
-  background-color: #ED6454;
-  transition: width 100ms ease-in-out, height 100ms ease-in-out 100ms;
-}
-
-.tags-dropdown .opened {
-  width: 670px;
-  height: 400px;
-}
-
-.tags-dropdown .tags-input {
-  width: 100%;
+  border-radius: 5px;
   display: flex;
-  flex-direction: column;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 20px;
+  margin-right: 20px;
 }
 
-.tags-dropdown .tags-input .input {
-  width: 100%;
-  height: 70px;
-  display: flex;
-  align-items: center;
-}
-
-.tags-dropdown .tags-input .input input {
-  width: 100%;
+.dropdown__ingredients input, .dropdown__appareil input, .dropdown__ustensiles input {
+  width: 110px;
+  height: 30px;
   background-color: transparent;
   border: none;
   color: white;
   font-family: "Lato", sans-serif;
   font-weight: 700;
   font-size: 18px;
-  margin-right: 20px;
 }
 
-.tags-dropdown .tags-input .input input::placeholder {
+.dropdown__ingredients input::placeholder, .dropdown__appareil input::placeholder, .dropdown__ustensiles input::placeholder {
   color: white;
 }
 
-.tags-dropdown .tags-input .input input:focus {
+.dropdown__ingredients input:focus, .dropdown__appareil input:focus, .dropdown__ustensiles input:focus {
   outline: none;
 }
 
-.tags-dropdown .tags-input .tags__list {
-  list-style: none;
-  width: 100%;
+.dropdown__ingredients .tags-chevron, .dropdown__appareil .tags-chevron, .dropdown__ustensiles .tags-chevron {
+  width: 30px;
+  height: 30px;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  padding-bottom: 10px;
+  justify-content: flex-end;
+  align-items: center;
+  cursor: pointer;
 }
 
-.tags-dropdown .tags-input .tags__list li {
+.dropdown__ingredients .tags__list, .dropdown__appareil .tags__list, .dropdown__ustensiles .tags__list {
+  width: 100%;
+  list-style: none;
+  display: none;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.dropdown__ingredients .tags__list li, .dropdown__appareil .tags__list li, .dropdown__ustensiles .tags__list li {
   font-family: "Lato", sans-serif;
   color: white;
   font-weight: 400;
@@ -201,6 +181,32 @@ main {
   line-height: 22px;
   margin-bottom: 10px;
   width: 30%;
+  cursor: pointer;
+}
+
+.dropdown__ingredients .tags__list li:hover, .dropdown__appareil .tags__list li:hover, .dropdown__ustensiles .tags__list li:hover {
+  text-decoration: underline;
+}
+
+.dropdown__ingredients {
+  background-color: #3282F7;
+}
+
+.dropdown__appareil {
+  background-color: #68D9A4;
+}
+
+.dropdown__ustensiles {
+  background-color: #ED6454;
+}
+
+.dropdown__ingredients.opened, .dropdown__appareil.opened, .dropdown__ustensiles.opened {
+  width: 670px;
+  height: unset;
+}
+
+.dropdown__ingredients.opened .tags__list, .dropdown__appareil.opened .tags__list, .dropdown__ustensiles.opened .tags__list {
+  display: flex;
 }
 
 .recipes-cards {

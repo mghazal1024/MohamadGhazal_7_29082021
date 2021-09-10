@@ -1,3 +1,4 @@
+import IngredientsTags from "../Components/IngredientsTags.js";
 import RecipeList from "../Components/RecipeList.js";
 
 const handleSearchBar = (recipeData) => {
@@ -27,6 +28,7 @@ const handleSearchBar = (recipeData) => {
                 );
             });
             RecipeList(filteredRecipes);
+            IngredientsTags(filteredRecipes);
         } else {
             RecipeList(recipeData);
         }
