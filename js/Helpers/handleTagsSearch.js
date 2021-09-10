@@ -1,3 +1,4 @@
+import AppareilTags from "../Components/AppareilTags.js";
 import RecipeList from "../Components/RecipeList.js";
 
 const handleTagsSearch = (data, drowdown) => {
@@ -31,6 +32,7 @@ const handleTagsSearch = (data, drowdown) => {
             })
             console.log(filteredRecipesFromTags)
             RecipeList(filteredRecipesFromTags);
+            AppareilTags(filteredRecipesFromTags);
         })
 
         
