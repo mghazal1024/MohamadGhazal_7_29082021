@@ -8,14 +8,20 @@ import handleTagsSearch from "./Helpers/handleTagsSearch.js";
 
 let recipeData = {
     initialState: [],
-    updatedState: []
+    updatedState: [],
+    updateRecipeList: (data) => {
+        RecipeList(data);
+        IngredientsTags(data);
+        AppareilTags(data);
+    }
 }
 
 
-const updateRecipeList = (data) => {
-    RecipeList(data);
-    IngredientsTags(data);
-}
+// const updateRecipeList = (data) => {
+//     RecipeList(data);
+//     IngredientsTags(data);
+//     AppareilTags(data);
+// }
 
 
 const LoadRecipes = async () => {
@@ -24,8 +30,8 @@ const LoadRecipes = async () => {
         const result = await fetch(url);
         recipeData.initialState = await result.json();
         console.log(recipeData.initialState);
-        updateRecipeList(recipeData.initialState);
-        handleSearchBar(recipeData, updateRecipeList);
+        recipeData.updateRecipeList(recipeData.initialState);
+        handleSearchBar(recipeData);
         IngredientsTags(recipeData.initialState);
         AppareilTags(recipeData.initialState);
         handleDropdown();

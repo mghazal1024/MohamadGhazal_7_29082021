@@ -57,7 +57,7 @@
 
 
 
-const handleSearchBar = (data, updateRecipeList) => {
+const handleSearchBar = (data) => {
 
     // selecting the search bar input element
     const searchBar = document.querySelector('.search-bar input');
@@ -87,9 +87,9 @@ const handleSearchBar = (data, updateRecipeList) => {
                 );
             })
             data.updatedState = filteredRecipes;
-            updateRecipeList(data.updatedState);
+            data.updateRecipeList(data.updatedState);
         } else {
-            updateRecipeList(data.initialState);
+            data.updateRecipeList(data.initialState);
         }
 
     })

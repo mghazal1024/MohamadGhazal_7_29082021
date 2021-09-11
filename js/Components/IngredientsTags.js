@@ -1,6 +1,6 @@
 import handleTagsSearch from "../Helpers/handleTagsSearch.js";
 
-const IngredientsTags = (data) => {
+const IngredientsTags = (recipeData) => {
 
     const ingredientsTagList = document.querySelector('.dropdown__ingredients .tags__list');
 
@@ -8,20 +8,19 @@ const IngredientsTags = (data) => {
 
     ingredientsTagList.innerHTML = "";
 
-    data.map(recipe => {
+    recipeData.map( recipe => {
         recipe.ingredients.map( ingredient => {
             allIngredients.push(ingredient.ingredient);
         })
     })
 
-    let uniqueIngredients = [...new Set(allIngredients)]
+    let uniqueIngredients = [...new Set(allIngredients)];
 
     uniqueIngredients.map( unique => {
-        ingredientsTagList.innerHTML += `<li>${unique}</li>`
+        ingredientsTagList.innerHTML += `<li>${unique}</li>`;
     })
 
-    handleTagsSearch(data, ingredientsTagList)
-
+    handleTagsSearch( recipeData, ingredientsTagList);
 }
 
 export default IngredientsTags
