@@ -28,6 +28,7 @@ const LoadRecipes = async () => {
         handleSearchBar(recipeData, updateRecipeList);
         IngredientsTags(recipeData.initialState);
         AppareilTags(recipeData.initialState);
+        handleDropdown();
     } catch (err) {
         console.error(err)
     }
