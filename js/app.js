@@ -26,6 +26,8 @@ const LoadRecipes = async () => {
         console.log(recipeData.initialState);
         updateRecipeList(recipeData.initialState);
         handleSearchBar(recipeData, updateRecipeList);
+        IngredientsTags(recipeData.initialState);
+        AppareilTags(recipeData.initialState);
     } catch (err) {
         console.error(err)
     }
