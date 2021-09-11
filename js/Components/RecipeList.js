@@ -14,6 +14,8 @@ const RecipeList = (data) => {
 
     createRecipeList();
 
+    console.log(data)
+
    
 }
 
