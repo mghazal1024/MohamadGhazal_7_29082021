@@ -1,5 +1,3 @@
-import handleTagsSearch from "../Helpers/handleTagsSearch.js";
-
 const AppareilTags = (recipeData) => {
 
     const appareilTagList = document.querySelector('.dropdown__appareil .tags__list');
@@ -13,13 +11,13 @@ const AppareilTags = (recipeData) => {
     })
 
     let uniqueAppareil = [...new Set(allAppareils)];
-    console.log(uniqueAppareil)
+    // console.log(uniqueAppareil)
 
     uniqueAppareil.map( unique => {
         appareilTagList.innerHTML += `<li>${unique}</li>`
     })
 
-    handleTagsSearch( recipeData, appareilTagList);
+    // handleTagsSearch( recipeData, appareilTagList);
 
 }
 

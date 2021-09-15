@@ -4,6 +4,10 @@ import handleSearchBar from "./Helpers/handleSearchBar.js";
 import AppareilTags from "./Components/AppareilTags.js";
 import handleDropdown from "./Helpers/handleDropdown.js";
 import handleTagsSearch from "./Helpers/handleTagsSearch.js";
+import handleIngredientsTags from "./Helpers/handleIngredientsTags.js"
+import handleAppareilTags from "./Helpers/handleAppareilTags.js";
+import UstensilesTags from "./Components/UstensilesTags.js";
+import handleUstensilesTags from "./Helpers/handleUstensilesTags.js";
 
 
 let recipeData = {
@@ -13,15 +17,13 @@ let recipeData = {
         RecipeList(data);
         IngredientsTags(data);
         AppareilTags(data);
+        UstensilesTags(data);
+        handleDropdown();
+        handleIngredientsTags(recipeData);
+        handleAppareilTags(recipeData);
+        handleUstensilesTags(recipeData);
     }
 }
-
-
-// const updateRecipeList = (data) => {
-//     RecipeList(data);
-//     IngredientsTags(data);
-//     AppareilTags(data);
-// }
 
 
 const LoadRecipes = async () => {
@@ -32,9 +34,6 @@ const LoadRecipes = async () => {
         console.log(recipeData.initialState);
         recipeData.updateRecipeList(recipeData.initialState);
         handleSearchBar(recipeData);
-        IngredientsTags(recipeData.initialState);
-        AppareilTags(recipeData.initialState);
-        handleDropdown();
     } catch (err) {
         console.error(err)
     }

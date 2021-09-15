@@ -20,7 +20,7 @@ const IngredientsTags = (recipeData) => {
         ingredientsTagList.innerHTML += `<li>${unique}</li>`;
     })
 
-    handleTagsSearch( recipeData, ingredientsTagList);
+    // handleTagsSearch( recipeData, ingredientsTagList);
 }
 
 export default IngredientsTags
