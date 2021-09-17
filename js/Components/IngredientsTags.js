@@ -1,4 +1,4 @@
-import handleTagsSearch from "../Helpers/handleTagsSearch.js";
+import handleDropdown from "../Helpers/handleDropdown.js";
 
 const IngredientsTags = (recipeData) => {
 
@@ -20,7 +20,6 @@ const IngredientsTags = (recipeData) => {
         ingredientsTagList.innerHTML += `<li>${unique}</li>`;
     })
 
-    // handleTagsSearch( recipeData, ingredientsTagList);
 }
 
 export default IngredientsTags

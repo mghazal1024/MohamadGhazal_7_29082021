@@ -14,12 +14,13 @@ let recipeData = {
     initialState: [],
     updatedState: [],
     updateRecipeList: (data) => {
+        console.log(data);
         RecipeList(data);
         IngredientsTags(data);
         AppareilTags(data);
         UstensilesTags(data);
         handleDropdown();
-        handleIngredientsTags(recipeData);
+        handleIngredientsTags(recipeData);  
         handleAppareilTags(recipeData);
         handleUstensilesTags(recipeData);
     }
@@ -32,8 +33,8 @@ const LoadRecipes = async () => {
         const result = await fetch(url);
         recipeData.initialState = await result.json();
         console.log(recipeData.initialState);
-        recipeData.updateRecipeList(recipeData.initialState);
         handleSearchBar(recipeData);
+        recipeData.updateRecipeList(recipeData.initialState);
     } catch (err) {
         console.error(err)
     }

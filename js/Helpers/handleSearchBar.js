@@ -1,3 +1,5 @@
+import handleDropdown from "./handleDropdown.js";
+import handleIngredientsTags from "./handleIngredientsTags.js";
 
 const handleSearchBar = (recipeData) => {
 
