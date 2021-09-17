@@ -94,6 +94,10 @@ main {
   margin-right: 20px;
 }
 
+.tags ul li img {
+  cursor: pointer;
+}
+
 .tags--ingredients {
   background-color: #3282F7;
 }

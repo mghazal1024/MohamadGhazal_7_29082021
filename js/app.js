@@ -13,16 +13,18 @@ import handleUstensilesTags from "./Helpers/handleUstensilesTags.js";
 let recipeData = {
     initialState: [],
     updatedState: [],
+    selectedTags: [],
     updateRecipeList: (data) => {
         console.log(data);
         RecipeList(data);
-        IngredientsTags(data);
-        AppareilTags(data);
-        UstensilesTags(data);
-        handleDropdown();
-        handleIngredientsTags(recipeData);  
-        handleAppareilTags(recipeData);
-        handleUstensilesTags(recipeData);
+        IngredientsTags(data, recipeData);
+        // AppareilTags(data);
+        // UstensilesTags(data);
+        // handleDropdown();
+        // handleIngredientsTags(recipeData);  
+        // handleAppareilTags(recipeData);
+        // handleUstensilesTags(recipeData);
+
     }
 }
 
