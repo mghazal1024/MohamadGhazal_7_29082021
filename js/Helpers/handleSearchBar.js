@@ -13,30 +13,30 @@ const handleSearchBar = (recipeData) => {
 
         let filteredRecipes = [];
 
-        if (searchString.length > 2) {
+        if( searchString.length > 2 ) {
+            for( let i = 0; i < recipeData.initialState.length; i++) {
+                let ingredientArray = [];
+                let ingredients = recipeData.initialState[i].ingredients;
+                let name = recipeData.initialState[i].name;
+                let description = recipeData.initialState[i].description;
 
-            filteredRecipes = recipeData.initialState.filter( (recipe) => {
-                const ingredients = () => {
-                    let ingredientArray = [];
-                    recipe.ingredients.map( ing => {
-                        ingredientArray.push(ing.ingredient);
-                    })
-
-                    // return those which include the query
-                    return ingredientArray.join(' ').toLowerCase().includes(searchString);
+                for( let j = 0; j < ingredients.length; j++) {
+                    ingredientArray.push(ingredients[j].ingredient)
                 }
-                //returning all from name, description and ingredients
-                return (
-                    recipe.name.toLowerCase().includes(searchString)
-                    || recipe.description.toLowerCase().includes(searchString)
-                    || ingredients()
-                );
-            })
+                console.log(ingredientArray.join(' ').toLowerCase())
+                if(
+                    ingredientArray.join(' ').toLowerCase().includes(searchString)
+                    || name.toLowerCase().includes(searchString)
+                    || description.toLowerCase().includes(searchString)
+                ) {
+                    filteredRecipes.push(recipeData.initialState[i]);
+                }
+            }
             recipeData.updatedState = filteredRecipes;
-            recipeData.updateRecipeList(recipeData.updatedState);
+            recipeData.updateRecipeList((recipeData.updatedState));
         } else {
             recipeData.updatedState = [];
-            recipeData.updateRecipeList(recipeData.initialState);
+            recipeData.updateRecipeList((recipeData.initialState));
             handleDropdown();
         }
 
