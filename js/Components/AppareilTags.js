@@ -45,7 +45,7 @@ const AppareilTags = (data, recipeData) => {
         appareilsTagList.innerHTML += `<li class="tags__list-item">${unique}</li>`
     })
 
-    handleAppareilTags(recipeData)
+    // handleAppareilTags(recipeData)
     handleDropdown();
 }
 

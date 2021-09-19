@@ -8,17 +8,20 @@ import handleIngredientsTags from "./Helpers/handleIngredientsTags.js"
 import handleAppareilTags from "./Helpers/handleAppareilTags.js";
 import UstensilesTags from "./Components/UstensilesTags.js";
 import handleUstensilesTags from "./Helpers/handleUstensilesTags.js";
+import handleTagsFilter from "./Helpers/handleTagsFilter.js";
 
 
 let recipeData = {
     initialState: [],
     updatedState: [],
+    selectedTags: [],
     updateRecipeList: (data) => {
         console.log(data);
         RecipeList(data);
-        IngredientsTags(data, recipeData);
+        IngredientsTags(data, recipeData.selectedTags);
         AppareilTags(data, recipeData);
         handleDropdown();
+        handleTagsFilter(recipeData.selectedTags);
         // AppareilTags(data);
         // UstensilesTags(data);
         // handleDropdown();

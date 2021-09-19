@@ -1,5 +1,5 @@
 
-const RecipeCard = (name, description, ingredients, time, appareil) => {
+const RecipeCard = (name, description, ingredients, time, appareil, ustensiles) => {
 
     const ingredientsArray = () => {
         let recipeIngredients = []
@@ -9,9 +9,17 @@ const RecipeCard = (name, description, ingredients, time, appareil) => {
         return recipeIngredients.join(', ');
     }
 
+    const ustensilesArray = () => {
+        let recipeUstensiles = [];
+        ustensiles.map( ustensil => {
+            recipeUstensiles.push(ustensil);
+        })
+        return recipeUstensiles.join(', ');
+    }
+
 
     let recipeCard = `
-        <li class="recipes-cards__list-item" data-ingredients="${ingredientsArray()}" data-appareil="${appareil}">
+        <li class="recipes-cards__list-item" data-ingredients="${ingredientsArray()}" data-appareil="${appareil}" data-ustensiles="${ustensilesArray()}"">
             <div class="image-placeholder"></div>
             <div class="recipe__info">
                 <div class="recipe__header">

@@ -1,7 +1,7 @@
 import handleDropdown from "../Helpers/handleDropdown.js";
 import handleIngredientsTags from "../Helpers/handleIngredientsTags.js";
 
-const IngredientsTags = (data, recipeData) => {
+const IngredientsTags = (data, selectedTags) => {
 
     const ingredientsTagList = document.querySelector('.dropdown__ingredients .tags__list');
 
@@ -11,7 +11,7 @@ const IngredientsTags = (data, recipeData) => {
 
     data.map( recipe => {
         recipe.ingredients.map( ingredient => {
-            allIngredients.push(ingredient.ingredient);
+            allIngredients.push(ingredient.ingredient.toLowerCase());
         })
     })
 
@@ -21,7 +21,7 @@ const IngredientsTags = (data, recipeData) => {
         ingredientsTagList.innerHTML += `<li class="tags__list-item">${unique}</li>`;
     })
 
-    handleIngredientsTags(recipeData);
+    handleIngredientsTags(selectedTags);
     handleDropdown();
 
     // console.log(selectedTags)

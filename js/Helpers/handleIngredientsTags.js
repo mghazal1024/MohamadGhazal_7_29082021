@@ -1,4 +1,4 @@
-const handleIngredientsTags = (recipeData) => {
+const handleIngredientsTags = (selectedTags) => {
 
     const recipesCards = [...document.querySelectorAll('.recipes-cards__list-item')];
 
@@ -10,12 +10,13 @@ const handleIngredientsTags = (recipeData) => {
     const tagsSectionUl = tagsSection.querySelector('ul');
     let tagsSectionLi = [];
 
-    let selectedTags = [];
 
     tagsListLi.map( tagLi => {
         tagLi.addEventListener('click', () => {
-            if(selectedTags.indexOf(tagLi.innerText) === -1) {
-                selectedTags.push(tagLi.innerText);
+            if(selectedTags.indexOf(tagLi.innerText.toLowerCase()) === -1) {
+                // selectedTags.push(tagLi.innerText);
+                selectedTags.push(tagLi.innerText.toLowerCase());
+                console.log(selectedTags)
 
                 tagsSectionUl.innerHTML +=`
                     <li class="tags--ingredients">
@@ -29,38 +30,19 @@ const handleIngredientsTags = (recipeData) => {
 
                 tagsSectionLi = [...tagsSectionUl.querySelectorAll('.tags--ingredients')];
 
-                recipesCards.map( recipeCard => {
-
-                    selectedTags.map ( selectedTag => {
-                        if(!recipeCard.getAttribute('data-ingredients').toLowerCase().includes(selectedTag.toLowerCase())) {
-                            recipeCard.classList.add('hide');
-                        } else {
-                            recipeCard.classList.remove('hide');
-                        }
-                    })
-                })
 
                 tagsSectionLi.map( tag => {
                     const closeTag = tag.querySelector('img');
+                    const tagText = tag.querySelector('p')
                     
                     closeTag.addEventListener('click', () => {
 
-                        selectedTags.splice(selectedTags.indexOf(tagLi.innerText), 1);
+                        selectedTags.splice(selectedTags.indexOf(tagText.innerText.toLowerCase()), 1);
                         closeTag.parentElement.classList.add('hide');
                         
-                        tagLi.classList.remove('hide');
-
-                        recipesCards.map ( recipeCard => {
-                            if(selectedTags.length > 0) {
-                                selectedTags.map ( selectedTag => {
-                                    if(!recipeCard.getAttribute('data-ingredients').toLowerCase().includes(selectedTag.toLowerCase())) {
-                                        recipeCard.classList.add('hide');
-                                    } else {
-                                        recipeCard.classList.remove('hide');
-                                    }
-                                })
-                            } else {
-                                recipeCard.classList.remove('hide');
+                        tagsListLi.map( tagListLi => {
+                            if(tagListLi.innerText.toLowerCase() === tagText.innerText.toLowerCase()) {
+                                tagListLi.classList.remove('hide')
                             }
                         })
                     })
