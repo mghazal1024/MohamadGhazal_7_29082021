@@ -17,6 +17,8 @@ let recipeData = {
         console.log(data);
         RecipeList(data);
         IngredientsTags(data, recipeData);
+        AppareilTags(data, recipeData);
+        handleDropdown();
         // AppareilTags(data);
         // UstensilesTags(data);
         // handleDropdown();

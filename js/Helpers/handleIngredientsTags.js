@@ -11,7 +11,6 @@ const handleIngredientsTags = (recipeData) => {
     let tagsSectionLi = [];
 
     let selectedTags = [];
-    let allIngredients = [];
 
     tagsListLi.map( tagLi => {
         tagLi.addEventListener('click', () => {

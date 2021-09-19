@@ -8,7 +8,7 @@ const RecipeList = (recipeData) => {
     const createRecipeList = () => {
         recipesSection.innerHTML = "";
         recipeData.map(recipe => {
-            recipesSection.innerHTML += RecipeCard(recipe.name, recipe.description, recipe.ingredients, recipe.time);
+            recipesSection.innerHTML += RecipeCard(recipe.name, recipe.description, recipe.ingredients, recipe.time, recipe.appliance);
         })
     }
 
