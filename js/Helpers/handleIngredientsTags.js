@@ -28,9 +28,18 @@ const handleIngredientsTags = (selectedTags) => {
 
                 tagLi.classList.add('hide');
 
+                recipesCards.map( recipeCard => {
+
+                    console.log(recipeCard.getAttribute('data-ingredients'))
+
+                    if(!recipeCard.getAttribute('data-ingredients').toLowerCase().includes(tagLi.innerText.toLowerCase())) {
+                        recipeCard.classList.add('hide');
+                    }
+
+                    
+                })
+
                 tagsSectionLi = [...tagsSectionUl.querySelectorAll('.tags--ingredients')];
-
-
                 tagsSectionLi.map( tag => {
                     const closeTag = tag.querySelector('img');
                     const tagText = tag.querySelector('p')
@@ -45,6 +54,15 @@ const handleIngredientsTags = (selectedTags) => {
                                 tagListLi.classList.remove('hide')
                             }
                         })
+
+                        recipesCards.map( recipeCard => {
+
+                            if(recipeCard.classList.contains('hide') && !recipeCard.getAttribute('data-ingredients').toLowerCase().includes(tagText.innerText.toLowerCase())) {
+                                recipeCard.classList.remove('hide');
+                            }
+                        })
+
+
                     })
                 })
             }
