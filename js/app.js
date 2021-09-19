@@ -13,7 +13,6 @@ import handleUstensilesTags from "./Helpers/handleUstensilesTags.js";
 let recipeData = {
     initialState: [],
     updatedState: [],
-    selectedTags: [],
     updateRecipeList: (data) => {
         console.log(data);
         RecipeList(data);

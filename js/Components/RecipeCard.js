@@ -1,9 +1,17 @@
 
 const RecipeCard = (name, description, ingredients, time) => {
 
+    const ingredientsArray = () => {
+        let recipeIngredients = []
+        ingredients.map( ingredient => {
+            recipeIngredients.push(ingredient.ingredient);
+        })
+        return recipeIngredients.join(', ');
+    }
+
 
     let recipeCard = `
-        <li class="recipes-cards__list-item">
+        <li class="recipes-cards__list-item" data-ingredients="${ingredientsArray()}">
             <div class="image-placeholder"></div>
             <div class="recipe__info">
                 <div class="recipe__header">

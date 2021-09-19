@@ -3,6 +3,8 @@ import handleIngredientsTags from "./handleIngredientsTags.js";
 
 const handleSearchBar = (recipeData) => {
 
+    // recipeData.updateRecipeList(recipeData.initialState);
+
     // selecting the search bar input element
     const searchBar = document.querySelector('.search-bar input');
 

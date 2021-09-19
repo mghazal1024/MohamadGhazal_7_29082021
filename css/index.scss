@@ -99,6 +99,9 @@ main {
                 cursor: pointer;
             }
         }
+        li.hide {
+            display: none;
+        }
     }
     &--ingredients {
         background-color: $ingredients;
@@ -186,6 +189,9 @@ main {
                 &:hover {
                     text-decoration: underline;
                 }
+            }
+            li.hide {
+                display: none;
             }
         }
     }
@@ -292,8 +298,7 @@ main {
             }
         }
         &-item.hide {
-            // display: none;
-            border: 2px solid red;
+            display: none;
         }
     }
 }

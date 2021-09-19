@@ -18,7 +18,7 @@ const IngredientsTags = (data, recipeData) => {
     let uniqueIngredients = [...new Set(allIngredients)];
 
     uniqueIngredients.map( unique => {
-        ingredientsTagList.innerHTML += `<li>${unique}</li>`;
+        ingredientsTagList.innerHTML += `<li class="tags__list-item">${unique}</li>`;
     })
 
     handleIngredientsTags(recipeData);
