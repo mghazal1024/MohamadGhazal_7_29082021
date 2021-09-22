@@ -1,3 +1,5 @@
+import handleUstensilesInput from "../Helpers/handleUstensilesInput.js";
+
 const UstensilesTags = (data, selectedTags) => {
 
     const ustensilesTagList = document.querySelector('.dropdown__ustensiles .tags__list');
@@ -8,7 +10,7 @@ const UstensilesTags = (data, selectedTags) => {
 
     data.map(recipe => {
         recipe.ustensiles.map( ustensil => {
-            allUstensiles.push(ustensil);
+            allUstensiles.push(ustensil.toLowerCase());
         })
     })
 
@@ -18,6 +20,8 @@ const UstensilesTags = (data, selectedTags) => {
         ustensilesTagList.innerHTML += `<li class="tags__list-item">${unique}</li>`
     })
     console.log(uniqueUstensiles)
+
+    handleUstensilesInput(ustensilesTagList);
 
 }
 

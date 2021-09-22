@@ -1,5 +1,7 @@
 // const AppareilTags = (recipeData) => {
 
+import handleAppareilInput from "../Helpers/handleAppareilInput.js";
+
 import handleAppareilTags from "../Helpers/handleAppareilTags.js";
 import handleDropdown from "../Helpers/handleDropdown.js";
 
@@ -44,6 +46,8 @@ const AppareilTags = (data, selectedTags) => {
     uniqueAppareil.map( unique => {
         appareilsTagList.innerHTML += `<li class="tags__list-item">${unique}</li>`
     })
+
+    handleAppareilInput(appareilsTagList);
 
     // handleAppareilTags(recipeData)
     // handleDropdown();
