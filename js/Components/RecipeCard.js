@@ -34,7 +34,7 @@ const RecipeCard = (name, description, ingredients, time, appareil, ustensiles) 
                         ${ingredients.map( ingredient => {
                             if(ingredient.quantity) {
                                 return (
-                                    `<li><p>${ingredient.ingredient}: <span>${ingredient.quantity} ${ingredient.unit}</span></p></li>`
+                                    `<li><p>${ingredient.ingredient}: <span>${ingredient.quantity} ${ingredient.unit ? ingredient.unit : ""}</span></p></li>`
                                 )
                             } else {
                                 return (

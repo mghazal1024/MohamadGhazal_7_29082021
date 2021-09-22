@@ -40,6 +40,7 @@ const LoadRecipes = async () => {
         recipeData.initialState = await result.json();
         console.log(recipeData.initialState);
         handleSearchBar(recipeData);
+        // Loading the recipes with the initial json list
         recipeData.updateRecipeList(recipeData.initialState);
     } catch (err) {
         console.error(err)
