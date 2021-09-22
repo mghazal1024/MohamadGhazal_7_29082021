@@ -1,4 +1,4 @@
-const UstensilesTags = (recipeData) => {
+const UstensilesTags = (data, selectedTags) => {
 
     const ustensilesTagList = document.querySelector('.dropdown__ustensiles .tags__list');
 
@@ -6,7 +6,7 @@ const UstensilesTags = (recipeData) => {
 
     ustensilesTagList.innerHTML = "";
 
-    recipeData.map(recipe => {
+    data.map(recipe => {
         recipe.ustensiles.map( ustensil => {
             allUstensiles.push(ustensil);
         })
@@ -15,8 +15,9 @@ const UstensilesTags = (recipeData) => {
     let uniqueUstensiles = [...new Set(allUstensiles)];
 
     uniqueUstensiles.map( unique => {
-        ustensilesTagList.innerHTML += `<li>${unique}</li>`
+        ustensilesTagList.innerHTML += `<li class="tags__list-item">${unique}</li>`
     })
+    console.log(uniqueUstensiles)
 
 }
 

@@ -18,13 +18,13 @@ let recipeData = {
     updateRecipeList: (data) => {
         console.log(data);
         RecipeList(data);
-        // IngredientsTags(data, recipeData.selectedTags);
-        // AppareilTags(data, recipeData);
+        IngredientsTags(data, recipeData.selectedTags);
+        AppareilTags(data, recipeData.selectedTags);
+        UstensilesTags(data, recipeData.selectedTags);
         // handleDropdown();
         // handleTagsFilter(recipeData.selectedTags);
         // AppareilTags(data);
-        // UstensilesTags(data);
-        // handleDropdown();
+        handleDropdown();
         // handleIngredientsTags(recipeData);  
         // handleAppareilTags(recipeData);
         // handleUstensilesTags(recipeData);

@@ -27,7 +27,7 @@ import handleDropdown from "../Helpers/handleDropdown.js";
 // export default AppareilTags
 
 
-const AppareilTags = (data, recipeData) => {
+const AppareilTags = (data, selectedTags) => {
 
     const appareilsTagList = document.querySelector('.dropdown__appareil .tags__list');
 
@@ -46,7 +46,7 @@ const AppareilTags = (data, recipeData) => {
     })
 
     // handleAppareilTags(recipeData)
-    handleDropdown();
+    // handleDropdown();
 }
 
 

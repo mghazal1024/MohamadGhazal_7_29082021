@@ -1,4 +1,4 @@
-import handleDropdown from "../Helpers/handleDropdown.js";
+// import handleDropdown from "../Helpers/handleDropdown.js";
 import handleIngredientsTags from "../Helpers/handleIngredientsTags.js";
 
 const IngredientsTags = (data, selectedTags) => {
@@ -21,8 +21,8 @@ const IngredientsTags = (data, selectedTags) => {
         ingredientsTagList.innerHTML += `<li class="tags__list-item">${unique}</li>`;
     })
 
-    handleIngredientsTags(selectedTags);
-    handleDropdown();
+    // handleIngredientsTags(selectedTags);
+    // handleDropdown();
 
     // console.log(selectedTags)
 
