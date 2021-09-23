@@ -98,7 +98,6 @@ const handleIngredientsTags = (ingredientsTagElements, selectedTags) => {
                 console.log(selectedTags)
             }
 
-            // handleTagClose(element, tagsSectionLi, selectedTags);
             handleTagClose(selectedTags);
         })
 
