@@ -20,15 +20,6 @@ const handleTagClose = (selectedTags, recipeCards) => {
                 let appareil = recipe.getAttribute('data-appareil').toLowerCase();
                 let ustensiles = recipe.getAttribute('data-ustensiles').toLowerCase();
 
-
-
-                // selectedTags.map( selectedTag => {
-                //     if ( ingredients.includes( selectedTag.toLowerCase() )
-                //         && !ingredients.includes(tagText.innerText.toLowerCase())) {
-                //         recipe.classList.remove('hide');
-                //     } 
-                // })
-
                 selectedTags.map( selectedTag => {
                     if(
                         ( ingredients.includes( selectedTag.toLowerCase())

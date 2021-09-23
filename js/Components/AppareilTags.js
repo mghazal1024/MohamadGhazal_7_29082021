@@ -4,7 +4,7 @@ import handleAppareilInput from "../Helpers/handleAppareilInput.js";
 import handleAppareilTags from "../Helpers/handleAppareilTags.js";
 
 
-
+// component to create the tags in the apparel list dropdown
 const AppareilTags = (data, selectedTags) => {
 
     const appareilsTagList = document.querySelector('.dropdown__appareil .tags__list');

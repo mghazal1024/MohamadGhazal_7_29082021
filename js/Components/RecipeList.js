@@ -1,5 +1,6 @@
 import RecipeCard from "./RecipeCard.js";
 
+// Component that creates the recipe cards list
 const RecipeList = (recipeData) => {
 
     const recipesSection = document.querySelector('.recipes-cards');

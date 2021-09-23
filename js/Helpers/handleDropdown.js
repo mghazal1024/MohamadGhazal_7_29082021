@@ -22,9 +22,9 @@ const handleDropdown = () => {
         })
     }
 
-    // handleChevronClick(ingredientsDropdown);
-    // handleChevronClick(appareilDropdown);
-    // handleChevronClick(ustensilesDropdown);
+    handleChevronClick(ingredientsDropdown);
+    handleChevronClick(appareilDropdown);
+    handleChevronClick(ustensilesDropdown);
 
     handleInputClick(ingredientsDropdown);
     handleInputClick(appareilDropdown);

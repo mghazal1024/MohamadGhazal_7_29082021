@@ -1,4 +1,4 @@
-
+// Component that creates the recipe card
 const RecipeCard = (name, description, ingredients, time, appareil, ustensiles) => {
 
     const ingredientsArray = () => {

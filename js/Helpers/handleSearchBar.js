@@ -1,9 +1,6 @@
 import handleDropdown from "./handleDropdown.js";
-import handleIngredientsTags from "./handleIngredientsTags.js";
 
 const handleSearchBar = (recipeData) => {
-
-    // recipeData.updateRecipeList(recipeData.initialState);
 
     // selecting the search bar input element
     const searchBar = document.querySelector('.search-bar input');
@@ -44,7 +41,6 @@ const handleSearchBar = (recipeData) => {
         } else {
             recipeData.updatedState = [];
             recipeData.updateRecipeList(recipeData.initialState);
-            handleDropdown();
         }
 
     })

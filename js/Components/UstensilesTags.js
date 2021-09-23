@@ -2,6 +2,8 @@
 import handleUstensilesInput from "../Helpers/handleUstensilesInput.js";
 import handleUstensilesTags from "../Helpers/handleUstensilesTags.js";
 
+
+// component to create the tags in the ustensiles list dropdown
 const UstensilesTags = (data, selectedTags) => {
 
     const ustensilesTagList = document.querySelector('.dropdown__ustensiles .tags__list');

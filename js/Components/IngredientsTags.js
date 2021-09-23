@@ -2,6 +2,8 @@
 import handleIngredientsTags from "../Helpers/handleIngredientsTags.js";
 import handleIngredientsInput from "../Helpers/handleIngredientsInput.js";
 
+
+// component to create the tags in the ingredients list dropdown
 const IngredientsTags = (data, selectedTags) => {
 
     const ingredientsTagList = document.querySelector('.dropdown__ingredients .tags__list');
