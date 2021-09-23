@@ -22,11 +22,27 @@ const handleTagClose = (selectedTags, recipeCards) => {
 
 
 
+                // selectedTags.map( selectedTag => {
+                //     if ( ingredients.includes( selectedTag.toLowerCase() )
+                //         && !ingredients.includes(tagText.innerText.toLowerCase())) {
+                //         recipe.classList.remove('hide');
+                //     } 
+                // })
+
                 selectedTags.map( selectedTag => {
-                    if ( ingredients.includes( selectedTag.toLowerCase() )
-                        && !ingredients.includes(tagText.innerText.toLowerCase())) {
+                    if(
+                        ( ingredients.includes( selectedTag.toLowerCase())
+                            && !ingredients.includes(tagText.innerText.toLowerCase())
+                        ) || (
+                            appareil.includes( selectedTag.toLowerCase() )
+                            && !appareil.includes(tagText.innerText.toLowerCase())
+                        ) || (
+                            ustensiles.includes( selectedTag.toLowerCase() )
+                            && !ustensiles.includes(tagText.innerText.toLowerCase())
+                        )
+                    ) {
                         recipe.classList.remove('hide');
-                    } 
+                    }
                 })
 
 

@@ -28,8 +28,6 @@ const AppareilTags = (data, selectedTags) => {
     handleAppareilInput(appareilsTagElements);
     handleAppareilTags(appareilsTagElements, selectedTags)
 
-    // handleAppareilTags(recipeData)
-    // handleDropdown();
 }
 
 
