@@ -2,7 +2,6 @@ const handleIngredientsInput = (ingredientsTagElements) => {
 
 
     const ingredientsInput = document.querySelector('.dropdown__ingredients input');
-    // const ingredientElement = [...ingredientsTagList.querySelectorAll('.tags__list-item')];
 
     ingredientsInput.addEventListener('keyup', (e) => {
         let searchString = e.target.value.toLowerCase();

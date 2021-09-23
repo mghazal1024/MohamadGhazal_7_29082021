@@ -3,12 +3,11 @@ import IngredientsTags from "./Components/IngredientsTags.js";
 import handleSearchBar from "./Helpers/handleSearchBar.js";
 import AppareilTags from "./Components/AppareilTags.js";
 import handleDropdown from "./Helpers/handleDropdown.js";
-import handleTagsSearch from "./Helpers/handleTagsSearch.js";
+// import handleTagsSearch from "./Helpers/handleTagsSearch.js";
 import handleIngredientsTags from "./Helpers/handleIngredientsTags.js"
 import handleAppareilTags from "./Helpers/handleAppareilTags.js";
 import UstensilesTags from "./Components/UstensilesTags.js";
 import handleUstensilesTags from "./Helpers/handleUstensilesTags.js";
-import handleTagsFilter from "./Helpers/handleTagsFilter.js";
 import handleTagClose from "./Helpers/handleTagClose.js";
 
 
