@@ -41,13 +41,16 @@ const AppareilTags = (data, selectedTags) => {
         allAppareils.push(recipe.appliance)
     })
 
-    let uniqueAppareil = [...new Set(allAppareils)];
+    let uniqueAppareil = [...new Set(allAppareils)].sort();
 
     uniqueAppareil.map( unique => {
         appareilsTagList.innerHTML += `<li class="tags__list-item">${unique}</li>`
     })
 
-    handleAppareilInput(appareilsTagList);
+    const appareilsTagElements = [...appareilsTagList.querySelectorAll('.tags__list-item')]
+
+    handleAppareilInput(appareilsTagElements);
+    handleAppareilTags(appareilsTagElements, selectedTags)
 
     // handleAppareilTags(recipeData)
     // handleDropdown();

@@ -1,11 +1,12 @@
-const handleIngredientsInput = (ingredientsTagList) => {
+const handleIngredientsInput = (ingredientsTagElements) => {
+
 
     const ingredientsInput = document.querySelector('.dropdown__ingredients input');
-    const ingredientElement = [...ingredientsTagList.querySelectorAll('.tags__list-item')];
+    // const ingredientElement = [...ingredientsTagList.querySelectorAll('.tags__list-item')];
 
     ingredientsInput.addEventListener('keyup', (e) => {
         let searchString = e.target.value.toLowerCase();
-        ingredientElement.map( ingredient => {
+        ingredientsTagElements.map( ingredient => {
             if(!ingredient.innerText.toLowerCase().includes(searchString)) {
                 ingredient.classList.add('hide');
             } else {

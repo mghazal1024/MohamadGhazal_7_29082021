@@ -1,4 +1,5 @@
 import handleUstensilesInput from "../Helpers/handleUstensilesInput.js";
+import handleUstensilesTags from "../Helpers/handleUstensilesTags.js";
 
 const UstensilesTags = (data, selectedTags) => {
 
@@ -14,14 +15,16 @@ const UstensilesTags = (data, selectedTags) => {
         })
     })
 
-    let uniqueUstensiles = [...new Set(allUstensiles)];
+    let uniqueUstensiles = [...new Set(allUstensiles)].sort();
 
     uniqueUstensiles.map( unique => {
         ustensilesTagList.innerHTML += `<li class="tags__list-item">${unique}</li>`
     })
-    console.log(uniqueUstensiles)
+    
+    const ustensilesTagElements = [...ustensilesTagList.querySelectorAll('.tags__list-item')]
 
-    handleUstensilesInput(ustensilesTagList);
+    handleUstensilesInput(ustensilesTagElements);
+    handleUstensilesTags(ustensilesTagElements, selectedTags);
 
 }
 

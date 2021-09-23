@@ -5,7 +5,6 @@ import handleIngredientsInput from "../Helpers/handleIngredientsInput.js";
 const IngredientsTags = (data, selectedTags) => {
 
     const ingredientsTagList = document.querySelector('.dropdown__ingredients .tags__list');
-    
 
     let allIngredients = [];
 
@@ -17,13 +16,17 @@ const IngredientsTags = (data, selectedTags) => {
         })
     })
 
-    let uniqueIngredients = [...new Set(allIngredients)];
+    let uniqueIngredients = [...new Set(allIngredients)].sort();
 
     uniqueIngredients.map( unique => {
         ingredientsTagList.innerHTML += `<li class="tags__list-item">${unique}</li>`;
     })
-    
-    handleIngredientsInput(ingredientsTagList);
+
+    const ingredientsTagElements = [...ingredientsTagList.querySelectorAll('.tags__list-item')]
+
+    handleIngredientsInput(ingredientsTagElements);
+    handleIngredientsTags(ingredientsTagElements, selectedTags);
+
 
 }
 
