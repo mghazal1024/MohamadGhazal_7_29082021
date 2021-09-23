@@ -81,7 +81,9 @@ const handleIngredientsTags = (ingredientsTagElements, selectedTags) => {
 
     const tagsSection = document.querySelector('.tags');
     const tagsSectionUl = tagsSection.querySelector('ul');
-    let tagsSectionLi = [];
+
+    const recipeCards = [...document.querySelectorAll('.recipes-cards__list-item')];
+
 
     ingredientsTagElements.map( element => {
         element.addEventListener('click', () => {
@@ -89,16 +91,30 @@ const handleIngredientsTags = (ingredientsTagElements, selectedTags) => {
                 selectedTags.push(element.innerText.toLowerCase());
                 element.classList.add('hide');
 
+                recipeCards.map( recipe => {
+                   
+                    const ingredients = recipe.getAttribute('data-ingredients').toLowerCase();
+                    // const appareil = recipe.getAttribute('data-appareil').toLowerCase();
+                    // const ustensiles = recipe.getAttribute('data-ustensiles').toLowerCase();
+                    
+                    if (!ingredients.includes(element.innerText.toLowerCase())) {
+                            recipe.classList.add('hide');
+                        } else {
+                            recipe.classList.remove('hide');
+                        }
+                })
+
+
                 tagsSectionUl.innerHTML +=`
                     <li class="tags--ingredients">
                         <p>${element.innerText}</p>
                         <img src="/images/close.svg" alt="remove" />
                     </li>
                 `
-                console.log(selectedTags)
+                console.log(selectedTags, recipeCards)
             }
 
-            handleTagClose(selectedTags);
+            handleTagClose(selectedTags, recipeCards);
         })
 
 
