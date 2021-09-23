@@ -13,6 +13,13 @@ const handleSearchBar = (recipeData) => {
 
         let filteredRecipes = [];
 
+        if(recipeData.selectedTags.length > 0) {
+            console.log(recipeData.selectedTags)
+            recipeData.selectedTags = [];
+            const tagsSectionUl = document.querySelector('.tags ul');
+            tagsSectionUl.innerHTML = ""
+        }
+
         if (searchString.length > 2) {
 
             filteredRecipes = recipeData.initialState.filter( (recipe) => {
