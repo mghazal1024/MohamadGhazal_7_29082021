@@ -306,6 +306,7 @@ main {
     .dropdown {
         &__wrapper {
             justify-content: space-between;
+            flex-wrap: nowrap;
         }
         &__ingredients, &__appareil, &__ustensiles {
             width: 30%;

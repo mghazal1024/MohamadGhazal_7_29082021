@@ -333,6 +333,7 @@ main {
 @media screen and (min-width: 680px) {
   .dropdown__wrapper {
     justify-content: space-between;
+    flex-wrap: nowrap;
   }
   .dropdown__ingredients, .dropdown__appareil, .dropdown__ustensiles {
     width: 30%;
