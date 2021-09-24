@@ -38,7 +38,7 @@ header {
 
 main {
     width: 100%;
-    padding: 20px 0 100px 0;
+    padding: 20px 20px 100px 20px;
     display: flex;
     flex-direction: column;
 }
@@ -116,22 +116,25 @@ main {
 
 .dropdown {
     width: 100%;
-    height: 70px;
+    // height: 70px;
     display: flex;
+    flex-wrap: wrap;
     position: relative;
     margin-top: 20px;
     &__wrapper {
         width: 100%;
         // height: 70px;
         height: 100%;
-        position: absolute;
+        // position: absolute;
         top: 0;
         left: 0;
         display: flex;
+        flex-wrap: wrap;
         align-items: flex-start;
     }
     &__ingredients, &__appareil, &__ustensiles {
-        width: 200px;
+        // width: 200px;
+        width: 100%;
         height: 70px;
         border-radius: 5px;
         display: flex;
@@ -139,8 +142,9 @@ main {
         flex-wrap: wrap;
         justify-content: space-between;
         padding: 20px;
-        margin-right: 20px;
-        // box-sizing: border-box;
+        // margin-right: 20px;
+        margin-bottom: 20px;
+        margin-right: 0;
         input {
             width: 110px;
             height: 30px;
@@ -205,7 +209,8 @@ main {
         background-color: $ustensiles;
     }
     &__ingredients.opened, &__appareil.opened, &__ustensiles.opened {
-        width: 670px;
+        // width: 670px;
+        width: 100%;
         height: unset;
         .tags__list {
             display: flex;
@@ -234,7 +239,7 @@ main {
             overflow: hidden;
             display: flex;
             flex-direction: column;
-            margin-top: 50px;
+            margin-bottom: 50px;
             .image-placeholder {
                 width: 100%;
                 height: 178px;
@@ -305,6 +310,15 @@ main {
 
 @media screen and (min-width: $tablet-break) {
 
+    .dropdown {
+        &__wrapper {
+            justify-content: space-between;
+        }
+        &__ingredients, &__appareil, &__ustensiles {
+            width: 30%;
+        }
+    }
+
     .recipes-cards {
         &__list {
             &-item {
@@ -316,6 +330,24 @@ main {
 }
 
 @media screen and (min-width: $desktop-break) {
+
+    .dropdown {
+        height: 70px;
+        margin-bottom: 50px;
+        &__wrapper {
+            height: 70px;
+            position: absolute;
+            justify-content: flex-start;
+        }
+        &__ingredients, &__appareil, &__ustensiles {
+            width: 200px;
+            margin-right: 20px;
+            margin-bottom: 0;
+        }
+        &__ingredients.opened, &__appareil.opened, &__ustensiles.opened {
+            width: 670px;
+        }
+    }
 
     .recipes-cards {
         &__list {

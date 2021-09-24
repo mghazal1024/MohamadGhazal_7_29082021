@@ -27,7 +27,7 @@ header .logo__text {
 
 main {
   width: 100%;
-  padding: 20px 0 100px 0;
+  padding: 20px 20px 100px 20px;
   display: flex;
   flex-direction: column;
 }
@@ -116,8 +116,8 @@ main {
 
 .dropdown {
   width: 100%;
-  height: 70px;
   display: flex;
+  flex-wrap: wrap;
   position: relative;
   margin-top: 20px;
 }
@@ -125,15 +125,15 @@ main {
 .dropdown__wrapper {
   width: 100%;
   height: 100%;
-  position: absolute;
   top: 0;
   left: 0;
   display: flex;
+  flex-wrap: wrap;
   align-items: flex-start;
 }
 
 .dropdown__ingredients, .dropdown__appareil, .dropdown__ustensiles {
-  width: 200px;
+  width: 100%;
   height: 70px;
   border-radius: 5px;
   display: flex;
@@ -141,7 +141,8 @@ main {
   flex-wrap: wrap;
   justify-content: space-between;
   padding: 20px;
-  margin-right: 20px;
+  margin-bottom: 20px;
+  margin-right: 0;
 }
 
 .dropdown__ingredients input, .dropdown__appareil input, .dropdown__ustensiles input {
@@ -218,7 +219,7 @@ main {
 }
 
 .dropdown__ingredients.opened, .dropdown__appareil.opened, .dropdown__ustensiles.opened {
-  width: 670px;
+  width: 100%;
   height: unset;
 }
 
@@ -248,7 +249,7 @@ main {
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 .recipes-cards__list-item .image-placeholder {
@@ -330,12 +331,35 @@ main {
 }
 
 @media screen and (min-width: 680px) {
+  .dropdown__wrapper {
+    justify-content: space-between;
+  }
+  .dropdown__ingredients, .dropdown__appareil, .dropdown__ustensiles {
+    width: 30%;
+  }
   .recipes-cards__list-item {
     width: 48%;
   }
 }
 
 @media screen and (min-width: 1240px) {
+  .dropdown {
+    height: 70px;
+    margin-bottom: 50px;
+  }
+  .dropdown__wrapper {
+    height: 70px;
+    position: absolute;
+    justify-content: flex-start;
+  }
+  .dropdown__ingredients, .dropdown__appareil, .dropdown__ustensiles {
+    width: 200px;
+    margin-right: 20px;
+    margin-bottom: 0;
+  }
+  .dropdown__ingredients.opened, .dropdown__appareil.opened, .dropdown__ustensiles.opened {
+    width: 670px;
+  }
   .recipes-cards__list-item {
     width: 30%;
   }
