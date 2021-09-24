@@ -30,7 +30,7 @@ const handleTags = (tagElements, selectedTags, tagCategory) => {
                 tagsSectionUl.innerHTML +=`
                     <li class="tags--${tagCategory}">
                         <p>${element.innerText}</p>
-                        <img src="/images/close.svg" alt="remove" />
+                        <img src="images/close.svg" alt="remove" />
                     </li>
                 `
             }
