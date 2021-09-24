@@ -1,5 +1,5 @@
-import handleAppareilTags from "../Helpers/handleAppareilTags.js";
 import handleDropdownInput from "../Helpers/handleDropdownInput.js";
+import handleTags from "../Helpers/handleTags.js";
 
 
 // component to create the tags in the apparel list dropdown
@@ -27,7 +27,7 @@ const AppareilTags = (data, selectedTags) => {
     const appareilInput = document.querySelector('.dropdown__appareil input');
 
     handleDropdownInput(appareilInput, appareilsTagElements)
-    handleAppareilTags(appareilsTagElements, selectedTags)
+    handleTags(appareilsTagElements, selectedTags, "appareil")
 
 }
 
