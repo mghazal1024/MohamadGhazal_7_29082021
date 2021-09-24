@@ -1,7 +1,5 @@
-// const AppareilTags = (recipeData) => {
-
-import handleAppareilInput from "../Helpers/handleAppareilInput.js";
 import handleAppareilTags from "../Helpers/handleAppareilTags.js";
+import handleDropdownInput from "../Helpers/handleDropdownInput.js";
 
 
 // component to create the tags in the apparel list dropdown
@@ -9,6 +7,7 @@ const AppareilTags = (data, selectedTags) => {
 
     const appareilsTagList = document.querySelector('.dropdown__appareil .tags__list');
 
+    
     let allAppareils = [];
 
     appareilsTagList.innerHTML = "";
@@ -25,7 +24,9 @@ const AppareilTags = (data, selectedTags) => {
 
     const appareilsTagElements = [...appareilsTagList.querySelectorAll('.tags__list-item')]
 
-    handleAppareilInput(appareilsTagElements);
+    const appareilInput = document.querySelector('.dropdown__appareil input');
+
+    handleDropdownInput(appareilInput, appareilsTagElements)
     handleAppareilTags(appareilsTagElements, selectedTags)
 
 }

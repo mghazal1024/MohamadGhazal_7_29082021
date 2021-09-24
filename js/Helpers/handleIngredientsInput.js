@@ -1,6 +1,5 @@
 const handleIngredientsInput = (ingredientsTagElements) => {
 
-
     const ingredientsInput = document.querySelector('.dropdown__ingredients input');
 
     ingredientsInput.addEventListener('keyup', (e) => {

@@ -1,3 +1,4 @@
+//Components import
 import RecipeList from "./Components/RecipeList.js";
 import IngredientsTags from "./Components/IngredientsTags.js";
 import handleSearchBar from "./Helpers/handleSearchBar.js";
@@ -6,6 +7,7 @@ import handleDropdown from "./Helpers/handleDropdown.js";
 import UstensilesTags from "./Components/UstensilesTags.js";
 
 
+// app data state
 let recipeData = {
     initialState: [],
     updatedState: [],
@@ -19,15 +21,15 @@ let recipeData = {
     }
 }
 
-
+// initial load
 const LoadRecipes = async () => {
     try {
         const url ='json/recipesData.json';
         const result = await fetch(url);
         recipeData.initialState = await result.json();
-        console.log(recipeData.initialState);
         handleSearchBar(recipeData);
         handleDropdown();
+
         // Loading the recipes with the initial json list
         recipeData.updateRecipeList(recipeData.initialState);
     } catch (err) {

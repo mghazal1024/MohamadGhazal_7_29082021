@@ -1,5 +1,4 @@
-
-import handleUstensilesInput from "../Helpers/handleUstensilesInput.js";
+import handleDropdownInput from "../Helpers/handleDropdownInput.js";
 import handleUstensilesTags from "../Helpers/handleUstensilesTags.js";
 
 
@@ -26,7 +25,9 @@ const UstensilesTags = (data, selectedTags) => {
     
     const ustensilesTagElements = [...ustensilesTagList.querySelectorAll('.tags__list-item')]
 
-    handleUstensilesInput(ustensilesTagElements);
+    const ustensilesInput = document.querySelector('.dropdown__ustensiles input');
+
+    handleDropdownInput(ustensilesInput, ustensilesTagElements);
     handleUstensilesTags(ustensilesTagElements, selectedTags);
 
 }
