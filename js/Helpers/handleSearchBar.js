@@ -41,7 +41,6 @@ const handleSearchBar = (recipeData) => {
         } else {
             recipeData.updatedState = [];
             recipeData.updateRecipeList((recipeData.initialState));
-            handleDropdown();
         }
 
     })
