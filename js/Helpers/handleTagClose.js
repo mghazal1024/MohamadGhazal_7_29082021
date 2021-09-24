@@ -2,7 +2,6 @@ const handleTagClose = (selectedTags, recipeCards) => {
 
     let allTags = [...document.querySelectorAll('.tags ul li')];
     let allTagsListItems = [...document.querySelectorAll('.tags__list-item')];
-    let recipeCardsNodes = [];
 
     allTags.map( tag => {
         const closeTag = tag.querySelector('img');
