@@ -116,16 +116,13 @@ main {
 
 .dropdown {
     width: 100%;
-    // height: 70px;
     display: flex;
     flex-wrap: wrap;
     position: relative;
     margin-top: 20px;
     &__wrapper {
         width: 100%;
-        // height: 70px;
         height: 100%;
-        // position: absolute;
         top: 0;
         left: 0;
         display: flex;
@@ -133,7 +130,6 @@ main {
         align-items: flex-start;
     }
     &__ingredients, &__appareil, &__ustensiles {
-        // width: 200px;
         width: 100%;
         height: 70px;
         border-radius: 5px;
@@ -142,7 +138,6 @@ main {
         flex-wrap: wrap;
         justify-content: space-between;
         padding: 20px;
-        // margin-right: 20px;
         margin-bottom: 20px;
         margin-right: 0;
         input {
@@ -154,7 +149,6 @@ main {
             font-family: $primary-font;
             font-weight: 700;
             font-size: 18px;
-            // margin-right: 20px;
             &::placeholder{
                 color: white;
             }
@@ -209,7 +203,6 @@ main {
         background-color: $ustensiles;
     }
     &__ingredients.opened, &__appareil.opened, &__ustensiles.opened {
-        // width: 670px;
         width: 100%;
         height: unset;
         .tags__list {
