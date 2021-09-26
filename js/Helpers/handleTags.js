@@ -6,6 +6,8 @@ const handleTags = (tagElements, selectedTags, tagCategory) => {
     const tagsSection = document.querySelector('.tags');
     const tagsSectionUl = tagsSection.querySelector('ul');
 
+    const recipesSection = document.querySelector('.recipes-cards');
+
     const recipeCards = [...document.querySelectorAll('.recipes-cards__list-item')];
 
 
@@ -19,8 +21,6 @@ const handleTags = (tagElements, selectedTags, tagCategory) => {
                    
                     const ingredients = recipe.getAttribute(`data-${tagCategory}`).toLowerCase().split(', ');
 
-
-                    console.log(ingredients.indexOf(element.innerText.toLowerCase()));
                     if( ingredients.indexOf(element.innerText.toLowerCase()) === -1 ) {
                         recipe.classList.add('hide');
                     }
