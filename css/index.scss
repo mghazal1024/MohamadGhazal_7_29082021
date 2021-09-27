@@ -299,6 +299,15 @@ main {
             display: none;
         }
     }
+
+    &__no-results {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        font-family: $primary-font;
+        font-size: 22px;
+    }
+    
 }
 
 @media screen and (min-width: $tablet-break) {
