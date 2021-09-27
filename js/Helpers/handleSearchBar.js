@@ -1,5 +1,3 @@
-import handleDropdown from "./handleDropdown.js";
-
 const handleSearchBar = (recipeData) => {
 
     // selecting the search bar input element

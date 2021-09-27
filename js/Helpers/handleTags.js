@@ -20,7 +20,6 @@ const handleTags = (tagElements, selectedTags, tagCategory) => {
                     const ingredients = recipe.getAttribute(`data-${tagCategory}`).toLowerCase().split(', ');
 
 
-                    console.log(ingredients.indexOf(element.innerText.toLowerCase()));
                     if( ingredients.indexOf(element.innerText.toLowerCase()) === -1 ) {
                         recipe.classList.add('hide');
                     }

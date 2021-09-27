@@ -25,7 +25,7 @@ const RecipeCard = (name, description, ingredients, time, appareil, ustensiles) 
                 <div class="recipe__header">
                     <p class="title-text">${name}</p>
                     <div class="time">
-                        <img src="/images/time.svg" alt="time"/>
+                        <img src="images/time.svg" alt="time"/>
                         <p>${time} mins</p>
                     </div>
                 </div>
